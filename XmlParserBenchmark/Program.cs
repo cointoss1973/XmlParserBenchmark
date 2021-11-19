@@ -57,13 +57,6 @@ namespace XmlParserBenchmark
             _stream = null;
         }
 
-        //[Benchmark(Baseline = true, Description = "U8Xml.XmlParser")]
-        [Benchmark(Description = "U8Xml.XmlParser")]
-        public void U8XmlParser()
-        {
-            var stream = _stream!;
-            using var xml = U8Xml.XmlParser.Parse(stream);
-        }
 
         [Benchmark(Description = "System.Xml.Linq.XDocument")]
         public void XDocument()
@@ -71,6 +64,14 @@ namespace XmlParserBenchmark
             var stream = _stream!;
             _ = System.Xml.Linq.XDocument.Load(stream);
         }
+
+        [Benchmark(Description = "System.Xml.Linq.XElement")]
+        public void XElement()
+        {
+            var stream = _stream!;
+            var _ = System.Xml.Linq.XElement.Load(stream);
+        }
+
 
         [Benchmark(Description = "System.Xml.XmlDocument")]
         public void XmlDocument()
@@ -89,5 +90,14 @@ namespace XmlParserBenchmark
             {
             }
         }
+
+        //[Benchmark(Baseline = true, Description = "U8Xml.XmlParser")]
+        [Benchmark(Description = "U8Xml.XmlParser")]
+        public void U8XmlParser()
+        {
+            var stream = _stream!;
+            using var xml = U8Xml.XmlParser.Parse(stream);
+        }
+
     }
 }
