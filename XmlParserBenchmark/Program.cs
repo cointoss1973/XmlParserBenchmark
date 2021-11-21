@@ -91,6 +91,24 @@ namespace XmlParserBenchmark
             }
         }
 
+        /// <summary>
+        /// ChoXmlReader  https://www.nuget.org/packages/ChoETL.NETStandard/
+        /// </summary>
+        [Benchmark(Description = "ChoETL.ChoXmlReader")]
+        public void ChoXmlReader()
+        {
+            var stream = _stream!;
+            var reader = new ChoETL.ChoXmlReader(stream);
+            while ((_ = reader.Read()) != null)
+            {
+
+            }
+        }
+
+
+        /// <summary>
+        /// U8XmlParser  https://github.com/ikorin24/U8XmlParser
+        /// </summary>
         //[Benchmark(Baseline = true, Description = "U8Xml.XmlParser")]
         [Benchmark(Description = "U8Xml.XmlParser")]
         public void U8XmlParser()
