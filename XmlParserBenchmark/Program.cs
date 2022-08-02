@@ -127,7 +127,7 @@ namespace XmlParserBenchmark
         /// U8XmlParser  https://github.com/ikorin24/U8XmlParser
         /// </summary>
         //[Benchmark(Baseline = true, Description = "U8Xml.XmlParser")]
-        [Benchmark(Description = "U8Xml.XmlParser(1.1.2)")]
+        [Benchmark(Description = "U8Xml.XmlParser(1.6.1)")]
         public U8Xml.XmlObject U8XmlParser()
         {
             _stream.Position = 0;

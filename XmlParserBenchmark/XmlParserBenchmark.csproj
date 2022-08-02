@@ -8,8 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="BenchmarkDotNet" Version="0.13.1" />
-    <PackageReference Include="ChoETL.NETStandard" Version="1.2.1.28" />
-    <PackageReference Include="U8XmlParser" Version="1.1.2" />
+    <PackageReference Include="U8XmlParser" Version="1.6.1" />
   </ItemGroup>
 
   <ItemGroup>
